@@ -1,6 +1,6 @@
 package com.mk;
 
-import com.mk.data.Edge;
+import com.mk.data.Route;
 import com.mk.data.Town;
 import com.mk.data.TownMap;
 
@@ -9,17 +9,10 @@ import com.mk.data.TownMap;
  * User: mk
  * Date: 9/14/13
  * Time: 9:29 AM
+ * This class is an utility class to help in making the TownMap.
+ * @see TownMap
  */
 public class Input {
-
-    public static void main(String[] args) {
-        if (args.length > 0) {
-            TownMap map = Input.constructTownAndEdges(args[0]);
-            RouteFindingEngine engine = RouteFindingEngine.getEngine(map);
-            System.out.println(engine.getShortestPath("A", "D"));
-
-        }
-    }
 
     public static TownMap constructTownAndEdges(String info) {
         TownMap map = new TownMap();
@@ -33,8 +26,8 @@ public class Input {
                 int weight = Integer.valueOf(route.substring(2, route.length()));
                 Town sTown = map.getTown(startTown);
                 sTown = (sTown == null) ? sTown = new Town(startTown) : sTown;
-                Edge townEdge = new Edge(startTown, endTown, weight);
-                sTown.addNeighbor(townEdge);
+                Route townRoute = new Route(startTown, endTown, weight);
+                sTown.addNeighbor(townRoute);
                 map.addTown(sTown);
                 Town eTown = map.getTown(endTown);
                 eTown = (eTown == null) ? eTown = new Town(endTown) : eTown;

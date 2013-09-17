@@ -7,6 +7,8 @@ import java.util.*;
  * User: mk
  * Date: 9/14/13
  * Time: 9:38 AM
+ * This class holds the entire graph of Towns and Routes. We chose Map as lookup will be O(1) rather than using List
+ * Each Town can contain multiple edges. Town stores respective edges to other Towns as List in Town class.
  */
 public class TownMap {
 

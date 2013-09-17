@@ -12,7 +12,7 @@ import java.util.List;
 public class Town implements Comparable<Town>,Cloneable{
 
     private String name;
-    private List<Edge> neighbors = new ArrayList<Edge>();
+    private List<Route> neighbors = new ArrayList<Route>();
 
     public Town(String name) {
         this.name = name;
@@ -22,16 +22,16 @@ public class Town implements Comparable<Town>,Cloneable{
         return name;
     }
 
-    public List<Edge> getNeighbors() {
+    public List<Route> getNeighbors() {
         return neighbors;
     }
 
-    public void addNeighbor(Edge neighbor) {
+    public void addNeighbor(Route neighbor) {
         neighbors.add(neighbor);
     }
 
     public int getNeighborDistance(String neighborName){
-        for(Edge neighbor: neighbors){
+        for(Route neighbor: neighbors){
             if(neighbor.getEndTown().equals(neighborName)){
                 return neighbor.getWeight();
             }

@@ -7,13 +7,13 @@ package com.mk.data;
  * Time: 8:43 AM
  * To change this template use File | Settings | File Templates.
  */
-public class Edge {
+public class Route {
 
     private String startTown;
     private String endTown;
     private int weight;
 
-    public Edge(String startTown, String endTown, int weight) {
+    public Route(String startTown, String endTown, int weight) {
         this.startTown = startTown;
         this.endTown = endTown;
         this.weight = weight;
@@ -36,10 +36,10 @@ public class Edge {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Edge edge = (Edge) o;
+        Route route = (Route) o;
 
-        if (!endTown.equals(edge.endTown)) return false;
-        if (!startTown.equals(edge.startTown)) return false;
+        if (!endTown.equals(route.endTown)) return false;
+        if (!startTown.equals(route.startTown)) return false;
 
         return true;
     }
@@ -53,7 +53,7 @@ public class Edge {
 
     @Override
     public String toString() {
-        return "Edge{" +
+        return "Route{" +
                 "startTown='" + startTown + '\'' +
                 ", endTown='" + endTown + '\'' +
                 ", weight=" + weight +
